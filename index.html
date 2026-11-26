@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kalkulator Tambah-Tambahan</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial}
+body{min-height:100vh;display:flex;justify-content:center;align-items:center;padding:20px;background:linear-gradient(160deg,#a855f7,#6366f1,#3b82f6);position:relative;overflow:hidden}
+body::before{content:'';position:absolute;width:220px;height:220px;background:#ffffff55;border-radius:50%;top:-40px;right:-30px;filter:blur(10px)}
+body::after{content:'';position:absolute;width:280px;height:280px;background:#ffffff33;border-radius:50%;bottom:-80px;left:-60px;filter:blur(15px)}
+.card{background:#f8f7ff;width:100%;max-width:360px;border-radius:22px;padding:28px 24px;position:relative;z-index:2;box-shadow:0 20px 40px #00000033}
+h1{text-align:center;color:#2e2a8a;font-size:32px;line-height:1.15}
+p.sub{text-align:center;color:#666;margin:10px 0 25px;font-size:16px}
+label{display:block;color:#555;font-size:18px;margin:18px 0 8px}
+.input-box{display:flex;align-items:center;background:#f1eee6;border:1px solid #d6d0c0;border-radius:8px;padding:0 12px}
+.input-box span{font-size:22px;margin-right:8px}
+input{border:none;outline:none;background:transparent;width:100%;padding:14px 0;font-size:22px;color:#333}
+button{width:100%;margin-top:22px;border:none;padding:15px;border-radius:50px;background:linear-gradient(90deg,#a855f7,#3b82f6);color:#fff;font-size:26px;font-weight:bold;cursor:pointer}
+button:active{transform:scale(.97)}
+.hasil{margin-top:18px;background:#d4edda;border:1px solid #a3d9a5;border-radius:10px;padding:16px 14px;display:flex;align-items:center;gap:10px;color:#1e4d2a;font-size:22px;font-weight:bold}
+.hasil .cek{width:32px;height:32px;background:#2ecc71;color:#fff;border-radius:50%;display:flex;justify-content:center;align-items:center;font-size:18px;flex-shrink:0}
+.hasil span{font-weight:normal}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>Kalkulator<br>Tambah-Tambahan</h1>
+<p class="sub">Dibuat oleh naura al - Gondang Plosok</p>
+
+<label>⌨️ Angka Pertama</label>
+<div class="input-box"><span>🖊️</span><input type="number" id="a1" placeholder="0"></div>
+
+<label>‡ Angka Kedua</label>
+<div class="input-box"><span>🔢</span><input type="number" id="a2" placeholder="0"></div>
+
+<button onclick="hitung()">Hitung</button>
+
+<div class="hasil"><div class="cek">✓</div>Hasil <span id="out">Hasil: 0</span></div>
+</div>
+
+<script>
+function hitung(){
+let a = Number(document.getElementById('a1').value) || 0;
+let b = Number(document.getElementById('a2').value) || 0;
+document.getElementById('out').innerText = 'Hasil: ' + (a+b);
+}
+</script>
+</body>
+</html>
